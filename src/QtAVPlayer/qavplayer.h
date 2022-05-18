@@ -53,7 +53,7 @@ public:
     QAVPlayer(QObject *parent = nullptr);
     ~QAVPlayer();
 
-    void setSource(const QString &url, QIODevice *dev = nullptr);
+    Q_INVOKABLE void setSource(const QString &url, QIODevice *dev = nullptr);
     QString source() const;
 
     QList<QAVStream> videoStreams() const;

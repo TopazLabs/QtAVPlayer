@@ -22,6 +22,7 @@
 #include <QGuiApplication>
 #include <QDebug>
 #include <QElapsedTimer>
+#include <QQmlContext>
 
 extern "C" {
 #include <libavcodec/avcodec.h>
@@ -66,6 +67,7 @@ int main(int argc, char *argv[])
 
     QAVAudioOutput audioOutput;
     QAVPlayer p;
+    viewer.engine()->rootContext()->setContextProperty("p", &p);
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     Source src;
